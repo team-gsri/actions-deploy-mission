@@ -14,6 +14,6 @@ if [ ! -f "$LOCAL_PATH" ]; then
   exit 2
 fi
 
-ssh "$SSH_USERNAME@$SSH_HOSTNAME" "Start-Process -Verb RunAs powershell '-File C:\Arma3\Stop-ArmaInstance.ps1 $ARMA_INSTANCE'"
-scp "$LOCAL_PATH" "$SSH_USERNAME@$SSH_HOSTNAME:$REMOTE_PATH"
-ssh "$SSH_USERNAME@$SSH_HOSTNAME" "Start-Process -Verb RunAs powershell '-Command Get-ScheduledTask $ARMA_INSTANCE | Start-ScheduledTask'"
+ssh -vvv "$SSH_USERNAME@$SSH_HOSTNAME" "Start-Process -Verb RunAs powershell '-File C:\Arma3\Stop-ArmaInstance.ps1 $ARMA_INSTANCE'"
+scp -vvv "$LOCAL_PATH" "$SSH_USERNAME@$SSH_HOSTNAME:$REMOTE_PATH"
+ssh -vvv "$SSH_USERNAME@$SSH_HOSTNAME" "Start-Process -Verb RunAs powershell '-Command Get-ScheduledTask $ARMA_INSTANCE | Start-ScheduledTask'"
