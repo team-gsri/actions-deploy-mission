@@ -1,0 +1,24 @@
+name: 'Arma 3 mission publish'
+description: 'Publish an arma3 mission pbo on a GSRI server'
+inputs:
+
+  localPath:
+    description: 'Path to the pbo file, relative to the repository root'
+    required: true
+
+  remotePath:
+    description: 'Path to the pbo file on the server, absolute'
+    required: true
+
+  instanceName:
+    description: 'Name of the arma 3 server instance, based on GSRI tools'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  pre-entrypoint: 'setup.sh'
+  args:
+    - ${{ inputs.localPath }}
+    - ${{ inputs.remotePath }}
+    - ${{ inputs.instanceName }}
