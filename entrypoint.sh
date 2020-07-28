@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$#" -ne "5" ]; then
+if [ "$#" -ne "3" ]; then
   echo "Usage : $0 <local_path> <remote_path> <instance_name>"
   exit 1
 fi
