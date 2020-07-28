@@ -7,7 +7,7 @@ fi
 
 SSH_PATH=/root/.ssh
 LOCAL_PATH=$GITHUB_WORKSPACE/$1
-REMOTE_PATH=$3
+REMOTE_PATH=$2
 ARMA_INSTANCE=$3
 
 if [ ! -f "$LOCAL_PATH" ]; then
