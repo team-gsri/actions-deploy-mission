@@ -1,4 +1,4 @@
-FROM alpine:3.12.0
+FROM alpine:3.12.2
 COPY ./entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh && apk add openssh-client=8.3_p1-r0
+RUN chmod +x /entrypoint.sh && apk add openssh-client=8.4_p1-r2
 ENTRYPOINT ["/entrypoint.sh"]
